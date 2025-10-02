@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <!-- CRÍTICO PARA LA OPTIMIZACIÓN EN MÓVILES -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal 3D | Flyer Digital V2 (Responsive)</title>
+    <title>Personal 3D | Flyer Digital - ¡Máxima Performance Móvil!</title>
     <!-- Carga de Tailwind CSS para el diseño responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -19,19 +20,21 @@
         }
         /* Estilo para el título principal, haciéndolo ultra-negro y grande */
         .main-title {
-            font-size: 2.5rem; /* Ajuste para móviles */
+            /* Ajuste para móviles: más pequeño y luego escala */
+            font-size: 2rem; 
             font-weight: 900;
             line-height: 1.1;
             letter-spacing: -1px;
         }
         @media (min-width: 640px) {
             .main-title {
-                font-size: 4rem; /* Tamaño para desktop */
+                font-size: 3.5rem; /* Tamaño para desktop/tablet */
             }
         }
         /* Estilo para las tarjetas de producto, con un efecto hover sutil */
         .product-card {
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer; /* Indica que es clickeable */
         }
         .product-card:hover {
             transform: translateY(-4px);
@@ -43,66 +46,69 @@
 <body class="antialiased">
 
     <!-- SECCIÓN PRINCIPAL: Título y Logo -->
-    <header class="py-10 bg-black shadow-lg">
+    <header class="py-8 sm:py-10 bg-black shadow-lg">
         <div class="container mx-auto px-4 text-center max-w-4xl">
-            <!-- Logo - Aquí puedes reemplazar con tu logo real si está en GitHub -->
-            <img src="logo%20personal3d.png" onerror="this.onerror=null;this.src='https://placehold.co/100x100/000/fff?text=3D'" alt="Logo Personal 3D" class="w-24 h-24 mx-auto mb-6 rounded-full border-4 border-yellow-500 shadow-xl">
+            <!-- Logo - Hemos mejorado el placeholder para que cargue instantáneamente -->
+            <div class="w-24 h-24 mx-auto mb-4 sm:mb-6 rounded-full border-4 border-yellow-500 shadow-xl flex items-center justify-center bg-gray-800">
+                <span class="text-5xl font-extrabold text-yellow-400">3D</span>
+            </div>
 
             <h1 class="main-title text-yellow-400 uppercase">
                 PERSONAL 3D
             </h1>
-            <p class="text-3xl font-bold text-white mt-2">
+            <p class="text-2xl sm:text-3xl font-bold text-white mt-2">
                 ¡TU IDEA <span class="text-yellow-400">HECHA REALIDAD!</span>
             </p>
-            <p class="text-lg text-gray-400 mt-2">
+            <p class="text-base sm:text-lg text-gray-400 mt-2">
                 Impresiones 3D a tu Medida
             </p>
         </div>
     </header>
 
-    <!-- SECCIÓN 1: Productos Destacados (Grid Responsivo) -->
-    <section id="trabajos" class="py-12 px-4">
+    <!-- SECCIÓN 1: Productos Destacados (Grid Responsivo con Enlaces) -->
+    <section id="trabajos" class="py-10 sm:py-12 px-4">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 text-yellow-400">Nuestros Trabajos Destacados</h2>
+            <h2 class="text-xl sm:text-3xl font-bold text-center mb-8 text-yellow-400">Nuestros Trabajos Destacados</h2>
             
-            <!-- El Grid es clave: se muestra 1 columna en móvil (sm) y 4 columnas en desktop (lg) -->
-            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- Grid de 2 columnas en móvil, 4 en desktop. Espaciado ligeramente mayor para tacto. -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 
-                <!-- Tarjeta 1: Dragones y Figuras -->
-                <div class="product-card bg-gray-800 p-3 sm:p-4 rounded-lg border border-gray-700 text-center flex flex-col justify-between">
-                    <img src="Photoroom-20250920_014251.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/fff?text=DRAGÓN+3D'" alt="Dragón articulado fucsia impreso en 3D" class="rounded-md h-auto w-full object-cover mb-3">
+                <!-- Tarjeta 1: Dragones y Figuras (ENLACE A INSTAGRAM) -->
+                <a href="https://www.instagram.com/personal._3d/reel/DOL5TExET27/" target="_blank" class="product-card bg-gray-800 p-3 rounded-xl border border-gray-700 text-center flex flex-col justify-between">
+                    <!-- loading="lazy" asegura que solo se carguen al ser visibles -->
+                    <img src="Photoroom-20250920_014251.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/fff?text=DRAGÓN+3D'" alt="Dragón articulado fucsia impreso en 3D" class="rounded-lg h-auto w-full object-cover mb-3" loading="lazy">
                     <div class="mt-auto">
                         <h3 class="text-sm sm:text-base font-semibold text-white">Dragones y Figuras</h3>
                         <p class="text-xs text-gray-400">Juguetes y Articulados</p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Tarjeta 2: Macetas y Adornos -->
-                <div class="product-card bg-gray-800 p-3 sm:p-4 rounded-lg border border-gray-700 text-center flex flex-col justify-between">
-                    <img src="Photoroom-20250925_000837.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/fff?text=MACETA+3D'" alt="Maceta decorativa de colores impresa en 3D" class="rounded-md h-auto w-full object-cover mb-3">
+                <!-- Tarjeta 2: Macetas y Adornos (ENLACE A INSTAGRAM) -->
+                <a href="https://www.instagram.com/personal._3d/p/DPAnj_KDE-i/" target="_blank" class="product-card bg-gray-800 p-3 rounded-xl border border-gray-700 text-center flex flex-col justify-between">
+                    <img src="Photoroom-20250925_000837.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/fff?text=MACETA+3D'" alt="Maceta decorativa de colores impresa en 3D" class="rounded-lg h-auto w-full object-cover mb-3" loading="lazy">
                     <div class="mt-auto">
                         <h3 class="text-sm sm:text-base font-semibold text-white">Macetas y Adornos</h3>
                         <p class="text-xs text-gray-400">Decoración y Hogar</p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Tarjeta 3: Lámparas Únicas -->
-                <div class="product-card bg-gray-800 p-3 sm:p-4 rounded-lg border border-gray-700 text-center flex flex-col justify-between">
-                    <img src="Photoroom-20250413_013929.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/fff?text=LÁMPARA+3D'" alt="Lámpara de diseño de conejo impresa en 3D" class="rounded-md h-auto w-full object-cover mb-3">
+                <!-- Tarjeta 3: Lámparas Únicas (ENLACE A INSTAGRAM) -->
+                <a href="https://www.instagram.com/personal._3d/p/DETSgkTsQdu/" target="_blank" class="product-card bg-gray-800 p-3 rounded-xl border border-gray-700 text-center flex flex-col justify-between">
+                    <img src="Photoroom-20250413_013929.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/fff?text=LÁMPARA+3D'" alt="Lámpara de diseño de conejo impresa en 3D" class="rounded-lg h-auto w-full object-cover mb-3" loading="lazy">
                     <div class="mt-auto">
                         <h3 class="text-sm sm:text-base font-semibold text-white">Lámparas Únicas</h3>
                         <p class="text-xs text-gray-400">Iluminación Exclusiva</p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Tarjeta 4: Premios y Recuerdos -->
-                <div class="product-card bg-gray-800 p-3 sm:p-4 rounded-lg border border-gray-700 text-center flex flex-col justify-between">
-                    <img src="Photoroom-20250925_141223.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/fff?text=TROFEO+3D'" alt="Trofeo deportivo impreso en 3D" class="rounded-md h-auto w-full object-cover mb-3">
+                <!-- Tarjeta 4: Premios y Recuerdos (ENLACE A INSTAGRAM) -->
+                <a href="https://www.instagram.com/personal._3d/p/DPR_h81EQRE/" target="_blank" class="product-card bg-gray-800 p-3 rounded-xl border border-gray-700 text-center flex flex-col justify-between">
+                    <img src="Photoroom-20250925_141223.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1f2937/fff?text=TROFEO+3D'" alt="Trofeo deportivo impreso en 3D" class="rounded-lg h-auto w-full object-cover mb-3" loading="lazy">
                     <div class="mt-auto">
                         <h3 class="text-sm sm:text-base font-semibold text-white">Premios y Recuerdos</h3>
                         <p class="text-xs text-gray-400">Souvenirs y Trofeos</p>
                     </div>
-                </div>
+                </a>
 
             </div>
         </div>
@@ -124,7 +130,7 @@
 
             <!-- Clientes Satisfechos -->
             <div class="text-center">
-                <p class="text-2xl font-extrabold text-yellow-400 flex items-center justify-center">
+                <p class="text-xl sm:text-2xl font-extrabold text-yellow-400 flex items-center justify-center">
                     <i class="fas fa-star mr-2"></i> +100 Clientes Satisfechos
                 </p>
             </div>
@@ -136,22 +142,22 @@
         <div class="container mx-auto max-w-4xl">
             <h2 class="text-2xl font-bold text-center mb-6 text-yellow-400">PROCESO RÁPIDO Y SENCILLO</h2>
             
-            <!-- El Flexbox es clave aquí: se apila automáticamente en móvil (flex-col) y se pone en fila en desktop (lg:flex-row) -->
-            <div class="flex flex-col lg:flex-row justify-between text-center bg-gray-900 p-6 rounded-xl shadow-inner border border-gray-700">
+            <!-- Flexbox responsivo: se apila en móvil (defecto) y se pone en fila en desktop (lg:flex-row) -->
+            <div class="flex flex-col lg:flex-row justify-between text-center bg-gray-900 p-4 sm:p-6 rounded-xl shadow-inner border border-gray-700 space-y-4 lg:space-y-0">
                 <div class="p-2 w-full lg:w-1/4">
-                    <p class="text-xl font-bold text-white">1. Cotizá</p>
+                    <p class="text-lg sm:text-xl font-bold text-white">1. Cotizá</p>
                 </div>
                 <div class="p-2 w-full lg:w-1/4">
-                    <p class="text-xl font-bold text-white">2. Diseñamos</p>
+                    <p class="text-lg sm:text-xl font-bold text-white">2. Diseñamos</p>
                 </div>
                 <div class="p-2 w-full lg:w-1/4">
-                    <p class="text-xl font-bold text-white">3. Imprimimos</p>
+                    <p class="text-lg sm:text-xl font-bold text-white">3. Imprimimos</p>
                 </div>
                 <div class="p-2 w-full lg:w-1/4">
-                    <p class="text-xl font-bold text-white">4. Entregamos</p>
+                    <p class="text-lg sm:text-xl font-bold text-white">4. Entregamos</p>
                 </div>
             </div>
-            <p class="text-center text-sm text-gray-400 mt-4">
+            <p class="text-center text-xs sm:text-sm text-gray-400 mt-4">
                 Entrega estimada: **+2 a 5 días hábiles** (según complejidad del proyecto).
             </p>
         </div>
@@ -161,21 +167,21 @@
     <section class="py-12 px-4 bg-black">
         <div class="container mx-auto max-w-4xl">
             <!-- Box de Pregunta -->
-            <div class="bg-gray-800 p-8 rounded-xl border-4 border-white shadow-2xl text-center">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-2 tracking-widest">
+            <div class="bg-gray-800 p-6 sm:p-8 rounded-xl border-4 border-white shadow-2xl text-center">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-2 tracking-widest">
                     ¡PREGUNTÁ SIN COMPROMISO!
                 </h2>
-                <p class="text-lg text-gray-400 mb-6">
+                <p class="text-base sm:text-lg text-gray-400 mb-6">
                     Hacemos realidad tus ideas, sean grandes o pequeñas.
                 </p>
                 
-                <!-- Botón de Email que funciona en móvil -->
-                <a href="mailto:personal3dnegocio@gmail.com" class="inline-block bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-400 transition duration-300 shadow-lg">
+                <!-- Botón de Email: El tamaño es grande (py-3 px-8) y garantiza un buen touch target en móvil -->
+                <a href="mailto:personal3dnegocio@gmail.com" class="inline-block bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-400 transition duration-300 shadow-lg transform hover:scale-[1.02]">
                     <i class="fas fa-envelope mr-2"></i> Consultá por Email
                 </a>
             </div>
 
-            <!-- Contacto y Redes -->
+            <!-- Contacto y Redes (Uso de flex-col para apilar en móvil) -->
             <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mt-10">
                 <div class="flex items-center text-lg">
                     <i class="fab fa-instagram text-yellow-500 mr-2"></i> 
@@ -185,12 +191,6 @@
                     <i class="fas fa-at text-yellow-500 mr-2"></i>
                     <a href="mailto:personal3dnegocio@gmail.com" class="text-gray-300 hover:text-yellow-400 transition">personal3dnegocio@gmail.com</a>
                 </div>
-            </div>
-
-            <!-- Espacio para el Código QR (No visible en la versión online, solo en el PDF) -->
-            <div class="text-center text-gray-600 mt-10 text-xs">
-                <!-- Este espacio es para referencia, el QR ya no se necesita en el móvil, pues ya están los enlaces directos. -->
-               
             </div>
         </div>
     </section>
